@@ -76,6 +76,13 @@ export class AppComponent implements OnInit{
     })
   }
 
+  openEditForm(data: any) {
+    this._dialog.open(EmpAddEditComponent, {
+      data,
+    });
+
+  }
+
   ngOnInit(): void {
     this.getEmployeeList()
   }
