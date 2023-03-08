@@ -28,18 +28,6 @@
       "experience": "74",
       "package": "79",
       "id": 1
-    },
-    {
-      "firstName": "Kamal",
-      "lastName": "Patterson",
-      "email": "nawatuti@mailinator.com",
-      "dob": "2013-06-25T21:00:00.000Z",
-      "gender": "female",
-      "education": "",
-      "company": "Hartman Chase LLC",
-      "experience": "44",
-      "package": "80",
-      "id": 2
     }
   ]
 }

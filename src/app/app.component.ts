@@ -59,6 +59,15 @@ export class AppComponent implements OnInit{
     }
   }
 
+  deleteEmployee(id: number) {
+    this._empService.deleteEmployee(id).subscribe({
+      next: (res) => {
+        alert('Employee has been deleted succesfully')
+      },
+      error: console.log,
+    })
+  }
+
   ngOnInit(): void {
     this.getEmployeeList()
   }
