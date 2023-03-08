@@ -16,6 +16,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { EmpAddEditComponent } from './emp-add-edit/emp-add-edit.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { EmpAddEditComponent } from './emp-add-edit/emp-add-edit.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
