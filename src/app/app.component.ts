@@ -33,7 +33,14 @@ export class AppComponent implements OnInit{
   constructor(private _dialog: MatDialog, private _empService: EmployeeService) {}
 
   openAddEditEmpForm() {
-    this._dialog.open(EmpAddEditComponent);
+    const dialogRef = this._dialog.open(EmpAddEditComponent);
+    dialogRef.afterClosed().subscribe({
+      next: value => {
+        if (value) {
+          this.getEmployeeList()
+        }
+      }
+    })
   }
 
   getEmployeeList(){
@@ -62,7 +69,8 @@ export class AppComponent implements OnInit{
   deleteEmployee(id: number) {
     this._empService.deleteEmployee(id).subscribe({
       next: (res) => {
-        alert('Employee has been deleted succesfully')
+        alert('Employee has been deleted succesfully');
+        this.getEmployeeList()
       },
       error: console.log,
     })
