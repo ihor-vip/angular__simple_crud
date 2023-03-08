@@ -35,8 +35,8 @@ export class AppComponent implements OnInit{
   openAddEditEmpForm() {
     const dialogRef = this._dialog.open(EmpAddEditComponent);
     dialogRef.afterClosed().subscribe({
-      next: value => {
-        if (value) {
+      next: (val) => {
+        if (val) {
           this.getEmployeeList()
         }
       }
@@ -77,10 +77,17 @@ export class AppComponent implements OnInit{
   }
 
   openEditForm(data: any) {
-    this._dialog.open(EmpAddEditComponent, {
+   const dialogRef =  this._dialog.open(EmpAddEditComponent, {
       data,
     });
 
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getEmployeeList()
+        }
+      }
+    })
   }
 
   ngOnInit(): void {
